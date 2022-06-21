@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const { MongoClient, ObjectID } = require('mongodb')
+const { MongoClient, ObjectId } = require('mongodb')
 require('dotenv').config()
-const PORT = 8100
+const PORT = 8000
 
 let db,
   dbConnectionStr = process.env.DB_STRING,
@@ -25,12 +25,12 @@ app.get('/search', async (req, res) => {
   try {
     let result = await collection.aggregate([
       {
-        '$Search' : {
+        '$search' : {
           'autocomplete' : {
             'query': `${req.query.query}`,
             'path': 'title',
             'fuzzy': {
-              'maxEdits': 2,
+              'maxEdits': 1,
               'prefixLength': 2
             }
           }
@@ -39,13 +39,14 @@ app.get('/search', async (req, res) => {
     ]).toArray()    
     res.send(result)
   } catch (e) {
+    console.log(e)
     res.status(500).send({message: e.message})
   }
 })
 
 app.get('/get/:id', async (req, res) => {
   try {
-    let res = await collection.findOne({
+    let result = await collection.findOne({
       '_id' : ObjectId(req.params.id)
     })
     res.send(result)
