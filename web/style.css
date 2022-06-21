@@ -1,4 +1,33 @@
+*{
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px;
+}
+
+.movie{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.info{
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#plot{
+  width: 250px;
+}
+
 img{
+  padding-left: 15px;
   max-height: 500px;
 }
 
