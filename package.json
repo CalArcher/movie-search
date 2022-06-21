@@ -1,0 +1,26 @@
+{
+  "name": "moviesearch",
+  "version": "1.0.0",
+  "description": "Practicing search suggestions using mongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CalArcher/movie-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CalArcher/movie-search/issues"
+  },
+  "homepage": "https://github.com/CalArcher/movie-search#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.7.0"
+  }
+}
