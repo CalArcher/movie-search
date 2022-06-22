@@ -3,6 +3,8 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+
 main{
   display: flex;
   flex-direction: column;
@@ -26,7 +28,7 @@ main{
   width: 250px;
 }
 
-img{
+#poster{
   padding-left: 15px;
   max-height: 500px;
 }

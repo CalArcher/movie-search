@@ -21,15 +21,15 @@ $(document).ready(function(){
       fetch(localhost)
         .then(result => result.json())
         .then(result => {
-          console.log(result)
           $('#cast').empty()
           $('#plot').empty()
           $('#runtime').empty()
           $('#rating').empty()
+          document.querySelector('#poster').src = null
           result.cast.forEach(cast => {
             $('#cast').append(`<li>${cast}</li>`)
           })
-          $('img').attr('src', result.poster)
+          $('#poster').attr('src', result.poster)
           document.querySelector('#castName').innerText = 'Cast'
           document.querySelector('#runtime').innerText = `Runtime: ${result.runtime}`
           document.querySelector('#plot').innerText = `Plot: ${result.plot}`
