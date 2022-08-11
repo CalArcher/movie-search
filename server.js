@@ -58,3 +58,8 @@ app.get('/get/:id', async (req, res) => {
 app.listen(process.env.PORT || PORT, () => {
   console.log('Server is running')
 })
+
+
+setInterval(function() {
+  app.get("https://movie-info-practice.herokuapp.com/");
+}, 60000)
